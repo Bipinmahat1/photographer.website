@@ -1,0 +1,328 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+    position: fixed; /* Fix the header at the top of the viewport */
+    width: 100%; /* Full width of the viewport */
+    top: 0; /* Position at the top of the page */
+    left: 0; /* Align to the left edge */
+    z-index: 800;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center align the menu items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem; /* Add padding for better clickability */
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Ensure content is not hidden behind the fixed header */
+body {
+    padding-top: 4rem; /* Adjust this value to match the height of your header */
+}
+
+/* Hero Section */
+.hero-text {
+    background-image: url('Himal.JPG'); /* Image stays static */
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(178, 202, 44, 0.884);
+    text-align: center;
+}
+
+.hero-text h1, .hero-text p, .hero-text a {
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Positioned lower initially */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.hero-text.animate h1, .hero-text.animate p, .hero-text.animate a {
+    opacity: 1; /* Text becomes visible */
+    transform: translateY(0); /* Moves into place */
+}
+
+.hero-text h1 {
+    font-size: 3rem; /* Keep the original size */
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    background-color: #34a043;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem; /* Keep the button size */
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e62222;
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 3rem;
+    text-align: center;
+    background-color: white;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 25%;
+    height: 300px;
+    margin: 1%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* About Section */
+#about {
+    padding: 3rem;
+    background-color: #ffffff;
+    text-align: center;
+    border: 2px solid #ddd; /* Add a subtle border */
+    border-radius: 15px; /* Rounded corners */
+    max-width: 800px; /* Limit the width */
+    margin: 2rem auto; /* Center the section */
+    box-shadow: 0 4px 8px rgba(228, 9, 9, 0.1); /* Add a subtle shadow */
+    position: relative;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    border-bottom: 2px solid #34a043; /* Underline heading */
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 1rem 0;
+}
+
+/* Style for the image */
+#about img {
+    width: 150px; /* Adjust size */
+    height: 150px;
+    border-radius: 50%; /* Circular profile image */
+    border: 3px solid #34a043;
+    margin-top: -75px; /* Pull image slightly above the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to the image */
+}
+
+/* Add some space below the About section */
+#about p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 3rem;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    font-size: 1.2rem;
+}
+
+/* Instagram Tooltip */
+.tooltip-container {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 17px;
+    border-radius: 10px;
+    margin-top: 20px; /* Add margin for spacing */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    border-radius: 15px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+      inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+      5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  }
+  
+  .profile {
+    background: #f9fbff;
+    border-radius: 10px 15px;
+    padding: 10px;
+    border: 1px solid #52382f;
+  }
+  
+  .tooltip-container:hover .tooltip {
+    top: -150px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .icon {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    position: relative;
+  }
+  
+  .layer {
+    width: 55px;
+    height: 55px;
+    transition: transform 0.3s;
+  }
+  
+  .icon:hover .layer {
+    transform: rotate(-35deg) skew(20deg);
+  }
+  
+  .layer span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    transition: all 0.3s;
+  }
+  
+  .layer span,
+  .text {
+    color: #e6683c;
+    border-color: #e6683c;
+  }
+  
+  .icon:hover .layer span {
+    box-shadow: -1px 1px 3px #e6683c;
+  }
+  
+  .icon .text {
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    opacity: 0;
+    font-weight: 500;
+    transform: translateX(-50%);
+    transition: bottom 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .icon:hover .text {
+    bottom: -35px;
+    opacity: 1;
+  }
+  
+  .icon:hover .layer span:nth-child(1) {
+    opacity: 0.2;
+  }
+  
+  .icon:hover .layer span:nth-child(2) {
+    opacity: 0.4;
+    transform: translate(5px, -5px);
+  }
+  
+  .icon:hover .layer span:nth-child(3) {
+    opacity: 0.6;
+    transform: translate(10px, -10px);
+  }
+  
+  .icon:hover .layer span:nth-child(4) {
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+  }
+  
+  .icon:hover .layer span:nth-child(5) {
+    opacity: 1;
+    transform: translate(20px, -20px);
+  }
+  
+  .instagramSVG {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: -webkit-linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+  
+  .user {
+    display: flex;
+   
+  }  
